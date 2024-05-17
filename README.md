@@ -1,7 +1,5 @@
 # Imitation Learning with Process Adversarial Diffusion
 
-## Project Overview
-(Here, provide a brief description of the purpose of the project, its core functionality, and its innovative aspects.)
 
 ## Quick Start
 
@@ -38,4 +36,3 @@ Thanks to the following researchers and developers for their excellent work, whi
 2. Long Yang, Zhixiong Huang, Fenghao Lei, Yucun Zhong, Yiming Yang, Cong Fang, Shiting Wen, Binbin Zhou, and Zhouchen Lin. Policy representation via diffusion probability model for reinforcement learning. arXiv preprint arXiv:2305.13122, 2023. [GitHub](https://github.com/LongYang1998/Diffusion-Policy-Representation)
 3. RLkit: Reinforcement learning framework and algorithms implemented in PyTorch. [GitHub](https://github.com/rail-berkeley/rlkit)
 4. Bingzheng Wang and Guoqiang Wu. Diffail: Diffusion adversarial imitation learning. AAAI Conference on Artificial Intelligence, 2023. [GitHub](https://github.com/ML-Group-SDU/DiffAIL)
-```
