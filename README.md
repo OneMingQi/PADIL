@@ -3,7 +3,6 @@
 
 ## Quick Start
 
-### Installation
 This project requires prior installation of PyTorch and MuJoCo. After installing these dependencies, follow these steps to set up the project environment:
 
 1. Create the environment:
@@ -22,7 +21,7 @@ This project requires prior installation of PyTorch and MuJoCo. After installing
    ```
    Modify the parameter files in the `yamls` folder to run corresponding experiments.
 
-### Key Code Files Overview
+## Key Code Files Overview
 To quickly understand and utilize this codebase, it is recommended to focus on the following key files and directories:
 - `main.py`: Base code for constructing experiments.
 - `diffusion/`: Implementation of the diffusion networks used in this paper.
