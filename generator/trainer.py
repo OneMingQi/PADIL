@@ -186,7 +186,6 @@ class diffusion_policy_trainer(Trainer):
         next_states = epoch["next_observations"]
         best_actions = epoch["best_actions"]
 
-
         """Q Training"""
         # Zero out the gradients of the Q-function optimizers
         self.q1_optimizer.zero_grad()
@@ -330,4 +329,3 @@ class diffusion_policy_trainer(Trainer):
             None
         """
         self.eval_statistics = None
-

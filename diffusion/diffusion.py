@@ -502,4 +502,3 @@ class Diffusion_conditional(Diffusion_base):
         disc_cost1 = vb.sum(dim=1) / (self.n_timesteps)
         disc_cost1 = disc_cost1.sum(dim=1) / (batch_action.shape[1])
         return disc_cost1
-

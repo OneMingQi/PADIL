@@ -201,6 +201,7 @@ def experiment(variant):
 
     policy = diffusion_actor_policy(
         policy_args,
+        diffusion_n_timesteps=variant["diffusion_n_timesteps"],
         state_dim=obs_dim,
         action_dim=action_dim,
         action_space=act_space,

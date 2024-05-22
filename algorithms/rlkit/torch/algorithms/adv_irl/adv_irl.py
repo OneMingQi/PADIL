@@ -16,7 +16,6 @@ from algorithms.rlkit.torch.algorithms.adv_irl.utility.bypass_bn import (
 )
 from algorithms.rlkit.core.vistools import plot_2dhistogram
 from diffusion.model import MLP_state_action
-from discriminator.GDAIL_Disc import GDAIL_Disc
 import random
 
 
@@ -153,7 +152,7 @@ class AdvIRL(TorchBaseAlgorithm):
         }
 
         policy_training_methods = {
-            "GAIL": self._do_policy_training
+            "GAIL": self._do_policy_training,
             "PADIL": self._do_PADIL_policy_training,
         }
 
@@ -266,7 +265,6 @@ class AdvIRL(TorchBaseAlgorithm):
     # -------------------------------
 
     def _do_policy_training(self, epoch):
-
         if self.policy_optim_batch_size_from_expert > 0:
             policy_batch_from_policy_buffer = self.get_batch(
                 self.policy_optim_batch_size - self.policy_optim_batch_size_from_expert,
@@ -296,7 +294,6 @@ class AdvIRL(TorchBaseAlgorithm):
             obs = torch.cat([obs, policy_batch["absorbing"][:, 0:1]], dim=-1)
             next_obs = torch.cat([next_obs, policy_batch["absorbing"][:, 1:]], dim=-1)
 
-
         self.discriminator.eval()
         if self.state_only:
             disc_input = torch.cat([obs, next_obs], dim=1)
@@ -308,7 +305,6 @@ class AdvIRL(TorchBaseAlgorithm):
 
         # compute the reward using the algorithm
         policy_batch["rewards"] = F.softplus(disc_logits, beta=-1)
-
 
         if self.clip_max_rews:
             policy_batch["rewards"] = torch.clamp(
@@ -421,7 +417,6 @@ class AdvIRL(TorchBaseAlgorithm):
             ptu.get_numpy(policy_batch["rewards"])
         )
 
-   
     # -------------------------------
     # Reward training
     # -------------------------------
@@ -542,7 +537,6 @@ class AdvIRL(TorchBaseAlgorithm):
                 )
                 self.disc_eval_statistics["Grad Pen W"] = np.mean(self.grad_pen_weight)
 
- 
     # -------------------------------
     # Reward training
     # -------------------------------
